@@ -5,7 +5,7 @@
 // Each tile's paddingBottom is 11.1%
 
 var body = document.querySelector("body");
-var tile;
+var tile, red, green, blue;
 body.style.margin = 0;
 
 for (i = 1; i <= 63; i++) {
@@ -16,9 +16,15 @@ for (i = 1; i <= 63; i++) {
     tile.style.width = ("11.1%");
 
     if (i % 2 === 0) {
-        tile.style.backgroundColor = ("#000");
+        red = i * 4;
+        green = i * 2;
+        blue = 255;
     } else {
-        tile.style.backgroundColor = ("#FF0000");
+        red = 255;
+        green = i * 4;
+        blue = i * 2;
+
     }
+    tile.style.backgroundColor = ("rgb(" + red.toString() + "," + green.toString() + "," + blue.toString() + ")");
     body.appendChild(tile);
 }
